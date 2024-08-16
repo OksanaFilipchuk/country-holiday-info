@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Project structure
+
+1.  Modules: app-module, shared module, holidays module
+
+2. Main page displays 
+ - list of countries,
+ - search input,
+ - three random contries with the next holidays
+
+3. Page for perticular country displays
+ - holidays for current year,
+ - slider to change year and get data for others years
+
+4. Deploy link
+ - [Country and holiday app](https://deft-bonbon-211f84.netlify.app/countries/AD?countryName=Andorra&id=AD)
+

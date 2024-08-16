@@ -37,7 +37,7 @@ export class CountryPageComponent implements OnInit {
       .getCountryHolidays(this.id, year)
       .subscribe(data => {
         this.holidays = data;
-        this.isLoading = true;
+        this.isLoading = false;
       });
   }
 }

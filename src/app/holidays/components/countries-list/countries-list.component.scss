@@ -1,30 +1,43 @@
-.mat-expansion-panel{
-    width: 300px;
-    margin-bottom: 15px; 
+.mat-card {
+  width: 300px;
+  margin-bottom: 15px;
 }
 
 .widget-wrapper {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 
-    & {
-        @media (max-width: 576px) { 
-            flex-direction: column;
-            align-items: center;
-         }
+  & {
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: center;
     }
+  }
+}
+
+.mat-header {
+  background-color: rgb(228, 227, 227);
+}
+
+.mat-header mat-card-title button {
+  color: rgb(0 0 0 / 87%);
+  background-color: rgb(228, 227, 227);
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 .table-wrapper {
-    max-height: 200px;
-    overflow-y: scroll;
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
-.date,.name {
-    font-size: 12px;
+.date,
+.name {
+  font-size: 12px;
 }
-

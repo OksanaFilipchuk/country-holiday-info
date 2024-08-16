@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryV3Dto, Holiday } from '../../models';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-countries-list',
@@ -14,24 +14,38 @@ export class CountriesListComponent implements OnInit {
   randomCountriesNextHolidays: any;
   searchQuery = '';
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ data }) => {
       console.log(data);
       this.countries = data.countries;
       this.countriesFiltered = data.countries;
-      this.initWidget(data.nextHolidays);
+      this.initWidgetData(data.nextHolidays);
     });
   }
-  initWidget(nextHolidays: any) {
+  initWidgetData(nextHolidays: any) {
     this.randomCountries = Object.keys(nextHolidays);
     this.randomCountriesNextHolidays = nextHolidays;
   }
 
   changeQuery(event: string): void {
     this.countriesFiltered = event
-      ? this.countries.filter(el => el.name.includes(event))
+      ? this.countries.filter(el =>
+          el.name.toLowerCase().includes(event.toLowerCase())
+        )
       : this.countries;
+  }
+
+  navigate(country: string): void {
+    const countryCode = this.countries.find(
+      el => el.name === country
+    )?.countryCode;
+    this.router.navigate(['/countries', countryCode], {
+      queryParams: { countryName: country, id: countryCode },
+    });
   }
 }

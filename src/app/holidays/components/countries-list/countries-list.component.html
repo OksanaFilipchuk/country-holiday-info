@@ -2,11 +2,15 @@
   <div class="widget-wrapper">
     <mat-card
       *ngFor="let randomCountry of randomCountries"
-      class="mat-expansion-panel"
+      class="mat-card"
       appearance="outlined">
-      <mat-card-header>
-        <mat-card-title> {{ randomCountry }}</mat-card-title>
-      </mat-card-header>
+      <mat-card-header class="mat-header">
+        <mat-card-title>
+          <button (click)="navigate(randomCountry)">
+            {{ randomCountry }}
+          </button></mat-card-title
+        ></mat-card-header
+      >
       <div class="table-wrapper">
         <table>
           <tr

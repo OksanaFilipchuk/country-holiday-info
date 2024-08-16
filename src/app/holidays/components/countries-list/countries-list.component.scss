@@ -1,0 +1,30 @@
+.mat-expansion-panel{
+    width: 300px;
+    margin-bottom: 15px; 
+}
+
+.widget-wrapper {
+    display: flex;
+    gap: 10px;
+
+    & {
+        @media (max-width: 576px) { 
+            flex-direction: column;
+            align-items: center;
+         }
+    }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table-wrapper {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.date,.name {
+    font-size: 12px;
+}
+

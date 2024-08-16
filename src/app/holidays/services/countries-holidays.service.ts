@@ -26,4 +26,10 @@ export class CountriesHolidaysService {
       `${this.url}api/v3/PublicHolidays/${requestYear}/${countryCode}`
     );
   }
+
+  getNextHolidays(countryCode: string): Observable<Holiday[]> {
+    return this.http.get<Holiday[]>(
+      `${this.url}api/v3/NextPublicHolidays/${countryCode}`
+    );
+  }
 }

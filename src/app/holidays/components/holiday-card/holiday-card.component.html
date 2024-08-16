@@ -1,0 +1,20 @@
+<mat-card appearance="outlined">
+  <mat-card-header class="mat-card-header">
+    <mat-card-title
+      ><h3>{{ holiday.name }}</h3></mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <p><b>Local name: </b>{{ holiday.localName }}</p>
+    <p><b>Holiday date: </b>{{ holiday.date | date: 'fullDate' }}</p>
+    <p><b>Global: </b>{{ holiday.global ? 'Yes' : 'No' }}</p>
+    <p>
+      <b>Type: </b
+      ><mat-list class="mat-list" role="list" aria-label="holiday types">
+        <mat-list-item *ngFor="let type of holiday.types" role="listitem">{{
+          type
+        }}</mat-list-item>
+      </mat-list>
+    </p>
+  </mat-card-content></mat-card
+>

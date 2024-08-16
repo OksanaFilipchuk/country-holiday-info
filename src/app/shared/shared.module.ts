@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [],
@@ -26,6 +28,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSliderModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatButtonModule,
   ],
   exports: [
     MatIconModule,
@@ -39,6 +43,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSliderModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatButtonModule,
   ],
 })
 export class SharedModule {}

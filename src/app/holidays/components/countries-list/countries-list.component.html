@@ -1,4 +1,26 @@
 <div class="container">
+  <div class="widget-wrapper">
+    <mat-card
+      *ngFor="let randomCountry of randomCountries"
+      class="mat-expansion-panel"
+      appearance="outlined">
+      <mat-card-header>
+        <mat-card-title> {{ randomCountry }}</mat-card-title>
+      </mat-card-header>
+      <div class="table-wrapper">
+        <table>
+          <tr
+            *ngFor="let holiday of randomCountriesNextHolidays[randomCountry]">
+            <td class="date">{{ holiday.date | date: 'MMMM d, y' }}</td>
+            <td class="name">
+              <b>{{ holiday.name }}</b>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </mat-card>
+  </div>
+
   <mat-form-field>
     <mat-label>Search</mat-label>
     <input
@@ -7,8 +29,9 @@
       [(ngModel)]="searchQuery"
       (ngModelChange)="changeQuery($event)" />
   </mat-form-field>
-  <mat-nav-list *ngFor="let country of countriesFiltered">
+  <mat-nav-list>
     <a
+      *ngFor="let country of countriesFiltered"
       mat-list-item
       [routerLink]="['/countries/' + country.countryCode]"
       [queryParams]="{ countryName: country.name, id: country.countryCode }"

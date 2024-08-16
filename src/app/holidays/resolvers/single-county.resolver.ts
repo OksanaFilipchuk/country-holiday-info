@@ -5,15 +5,15 @@ import {
 } from '@angular/router';
 import { CountriesHolidaysService } from '../services/countries-holidays.service';
 import { inject } from '@angular/core';
-import { CountryV3Dto } from '../models';
+import { Holiday } from '../models';
 import { Observable } from 'rxjs';
 
-export const countriesResolver: ResolveFn<Observable<CountryV3Dto[]>> = (
+export const singleCountyResolver: ResolveFn<Observable<Holiday[]>> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,
   countriesHolidaysService: CountriesHolidaysService = inject(
     CountriesHolidaysService
   )
 ) => {
-  return countriesHolidaysService.getCountries();
+  return countriesHolidaysService.getCountryHolidays(route.paramMap.get('id')!);
 };

@@ -12,6 +12,7 @@ export class CountriesListComponent implements OnInit {
   countries: CountryV3Dto[] = [];
   countriesFiltered: CountryV3Dto[] = [];
   searchQuery = '';
+
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {

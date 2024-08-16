@@ -5,7 +5,6 @@ import {
 } from '@angular/router';
 import { CountriesHolidaysService } from '../services/countries-holidays.service';
 import { inject } from '@angular/core';
-import { CountryV3Dto } from '../models';
 import { forkJoin, map, mergeMap, Observable } from 'rxjs';
 
 export const countriesResolver: ResolveFn<Observable<any>> = (

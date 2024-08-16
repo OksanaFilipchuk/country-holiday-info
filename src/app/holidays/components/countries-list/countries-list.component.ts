@@ -27,7 +27,8 @@ export class CountriesListComponent implements OnInit {
       this.initWidgetData(data.nextHolidays);
     });
   }
-  initWidgetData(nextHolidays: any) {
+
+  initWidgetData(nextHolidays: any): void {
     this.randomCountries = Object.keys(nextHolidays);
     this.randomCountriesNextHolidays = nextHolidays;
   }

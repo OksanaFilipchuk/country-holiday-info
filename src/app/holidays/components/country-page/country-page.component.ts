@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Holiday } from '../../models';
 import { CountriesHolidaysService } from '../../services/countries-holidays.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-country-page',
   templateUrl: './country-page.component.html',
   styleUrls: ['./country-page.component.scss'],
 })
-export class CountryPageComponent implements OnInit {
+export class CountryPageComponent implements OnInit, OnDestroy {
+  destroy = new Subject();
   countryName = '';
   id = '';
   year: string = new Date().getFullYear().toString();
@@ -35,9 +37,15 @@ export class CountryPageComponent implements OnInit {
     this.isLoading = true;
     this.countriesHolidaysService
       .getCountryHolidays(this.id, year)
+      .pipe(takeUntil(this.destroy))
       .subscribe(data => {
         this.holidays = data;
         this.isLoading = false;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy.next(true);
+    this.destroy.complete();
   }
 }

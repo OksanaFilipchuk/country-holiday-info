@@ -8,7 +8,7 @@ describe('CountryPageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CountryPageComponent]
+      declarations: [CountryPageComponent],
     });
     fixture = TestBed.createComponent(CountryPageComponent);
     component = fixture.componentInstance;

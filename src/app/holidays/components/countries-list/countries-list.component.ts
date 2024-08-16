@@ -22,7 +22,7 @@ export class CountriesListComponent implements OnInit {
     });
   }
 
-  changeQuery(event: string) {
+  changeQuery(event: string): void {
     this.countriesFiltered = event
       ? this.countries.filter(el => el.name.includes(event))
       : this.countries;

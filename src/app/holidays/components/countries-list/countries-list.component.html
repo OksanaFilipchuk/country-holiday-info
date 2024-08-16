@@ -1,3 +1,10 @@
-<ul>
-  <li *ngFor="let country of countries">{{ country.name }}</li>
-</ul>
+<div class="container">
+  <mat-form-field >
+    <mat-label>Search</mat-label>
+    <input matInput type="text" [(ngModel)]="searchQuery" (ngModelChange)="changeQuery($event)">
+  </mat-form-field>
+  <ul>
+    <li *ngFor="let country of countriesFiltered">{{ country.name }}</li>
+  </ul>
+  <div *ngIf="!countriesFiltered.length">No countries</div>
+</div>

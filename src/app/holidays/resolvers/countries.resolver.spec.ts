@@ -6,7 +6,7 @@ import { countriesResolver } from './countries.resolver';
 describe('countriesResolver', () => {
   const executeResolver: ResolveFn<boolean> = (...resolverParameters) =>
     TestBed.runInInjectionContext(() =>
-      countriesResolver(...resolverParameters),
+      countriesResolver(...resolverParameters)
     );
 
   beforeEach(() => {

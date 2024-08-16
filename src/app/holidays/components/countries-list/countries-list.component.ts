@@ -10,9 +10,8 @@ import { FormControl } from '@angular/forms';
 })
 export class CountriesListComponent implements OnInit {
   countries: CountryV3Dto[] = [];
-  countriesFiltered : CountryV3Dto[] = [];
-  searchQuery=''
-;
+  countriesFiltered: CountryV3Dto[] = [];
+  searchQuery = '';
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -20,11 +19,11 @@ export class CountriesListComponent implements OnInit {
       this.countries = countries;
       this.countriesFiltered = countries;
     });
-   
   }
 
-  changeQuery(event:string  ){
-        this.countriesFiltered = event?    this.countries.filter(el=>el.name.includes(event)):this.countries;
-
+  changeQuery(event: string) {
+    this.countriesFiltered = event
+      ? this.countries.filter(el => el.name.includes(event))
+      : this.countries;
   }
 }

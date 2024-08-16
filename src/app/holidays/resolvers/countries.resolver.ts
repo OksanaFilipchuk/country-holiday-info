@@ -10,8 +10,8 @@ export const countriesResolver: ResolveFn<any> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,
   countriesHolidaysService: CountriesHolidaysService = inject(
-    CountriesHolidaysService,
-  ),
+    CountriesHolidaysService
+  )
 ) => {
   return countriesHolidaysService.getCountries();
 };

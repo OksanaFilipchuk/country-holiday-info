@@ -8,7 +8,7 @@ describe('YearsSliderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [YearsSliderComponent]
+      declarations: [YearsSliderComponent],
     });
     fixture = TestBed.createComponent(YearsSliderComponent);
     component = fixture.componentInstance;

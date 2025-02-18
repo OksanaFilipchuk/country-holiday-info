@@ -4,8 +4,11 @@ import { ResolveFn } from '@angular/router';
 import { singleCountyResolver } from './single-county.resolver';
 
 describe('singleCountyResolver', () => {
-  const executeResolver: ResolveFn<boolean> = (...resolverParameters) => 
-      TestBed.runInInjectionContext(() => singleCountyResolver(...resolverParameters));
+  const executeResolver: ResolveFn<any> = (...resolverParameters) => {
+    TestBed.runInInjectionContext(() =>
+      singleCountyResolver(...resolverParameters)
+    );
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

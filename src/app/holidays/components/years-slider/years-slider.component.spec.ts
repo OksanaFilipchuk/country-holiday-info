@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { YearsSliderComponent } from './years-slider.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 describe('YearsSliderComponent', () => {
   let component: YearsSliderComponent;
@@ -8,7 +9,8 @@ describe('YearsSliderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [YearsSliderComponent]
+      declarations: [YearsSliderComponent],
+      imports: [SharedModule],
     });
     fixture = TestBed.createComponent(YearsSliderComponent);
     component = fixture.componentInstance;

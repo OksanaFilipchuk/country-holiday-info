@@ -2,7 +2,7 @@
   <h2>{{ countryName }}</h2>
   <app-years-slider (newValue)="updateData($event)"></app-years-slider>
   <h3>Holidays {{ year }}</h3>
-  <ng-container *ngIf="holidays.length">
+  <ng-container *ngIf="holidays?.length">
     <app-holiday-card
       *ngFor="let holiday of holidays"
       [holiday]="holiday"></app-holiday-card>
